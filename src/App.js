@@ -40,6 +40,12 @@ class Calculator extends React.Component {
           hasEnteredValue: false
         });
         break;
+      case '+/-':
+        this.negate();
+        break;
+      case '%':
+        this.percentage();
+        break;
       default: 
         break;
     }
@@ -48,16 +54,17 @@ class Calculator extends React.Component {
   // handles operator input
   operation(operator){
     
+
+
     // object containing all operations
     const operations = {
       '/' : (x,y) =>{return x/y;}, // division operation
       'x' : (x,y) =>{return x*y;}, // multiplication operation
       '+' : (x,y) =>{return x+y;}, // addition operation
-      '-' : (x,y) =>{return x-y;}, // subtraction operation 
+      '-' : (x,y) =>{return x-y;}, // subtraction operation
       '=' : () => {return this.state.value}
     }
-    
-    
+
     if(this.state.hasEnteredValue && this.state.operation !== ''){ // if a value has been entered by the user and operation has been set
       const x = this.state.value; // stored value
       const y = parseFloat(this.state.display); // second value input for operation
@@ -102,6 +109,32 @@ class Calculator extends React.Component {
     })
   }
 
+  negate(){
+    let display = '';
+    if(this.state.display.indexOf('-') === -1){
+      display = '-' + this.state.display;
+      this.setState({
+        display: display
+      });
+    } else {
+      display = this.state.display.slice(1);
+      this.setState({
+        display: display
+      })      
+    }
+      
+    
+    this.setState()
+  }
+
+  percentage() {
+    let temp =  parseFloat(this.state.display) / 100;
+        temp = temp.toString();
+        this.setState({
+          display: temp
+        });
+  }
+
   render() {
     return (
       <div className="Calculator">
@@ -130,10 +163,12 @@ class Calculator extends React.Component {
           <Button operation={this.handleClick.bind(this, '0')} value={'0'}/>
           <Button operation={this.handleClick.bind(this, '.')} value={'.'}/>
           <Button operation={this.handleClick.bind(this, '%')} value={'%'}/>
-          <Button operation={this.handleClick.bind(this, '=')} value={'='}/>
+          <Button operation={this.handleClick.bind(this, '-')} value={'-'}/>
         </div>
         <div className="row">
           <Button operation={this.clear.bind(this)} value={'AC'}/>
+          <Button operation={this.handleClick.bind(this, '+/-')} value={'+/-'}/>
+          <Button operation={this.handleClick.bind(this, '=')} value={'='}/>
         </div>
       </div>
     );
