@@ -1,3 +1,67 @@
-.App {
+.calculator {
+  height: 35vh;
+  background-color: rgb(61, 7, 105);
   text-align: center;
+  width: 250px;
+  margin:auto;
+  margin-top: 100px;
+  height: 360px;
+  border-radius: 10px;
+  padding: 10px;
+  vertical-align: center;
+  display:table;
+}
+
+.display{
+  color: #000;
+  height: 50px;
+  background-color: rgb(201, 199, 114);
+  width: 240px;
+  margin: auto;
+  vertical-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.display-text{
+  text-align: right;
+  margin: 0;
+}
+
+button{
+  color: #ddd;
+  background: black;
+  border: 2px solid #0099CC;
+  border-radius: 0px;
+  height: 60px;
+  width: 60px;
+
+}
+.AC{
+  background-color: rgb(173, 6, 6);
+  width: 120px;
+  text-align: left;
+}
+
+
+button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+button:active {
+  background-color: rgb(3, 68, 90);
+  color: #ddd;
+}
+
+.AC:hover {
+  background-color: rgb(219, 36, 36);
+  color: #ddd;
+}
+
+.operator{
+  background-color: rgb(247, 240, 240);
+  color: #008CBA
 }

@@ -10,3 +10,7 @@ A simple calculator built with React
 
 <h2>Second Commit</h2>
 <p>Added subtraction, negation and percentage functions.</p>
+
+<h2>Third Commit</h2>
+<p>fixed overflow of number of digits on display, styled calculator and added percentage functionality</p>
+

@@ -5,7 +5,7 @@ import React from 'react';
 
 const Button = (props) => {
     return (
-        <button onClick={props.operation}>
+        <button onClick={props.operation} id={props.id} className = {props.className}>
             {props.value}
         </button>
     )
